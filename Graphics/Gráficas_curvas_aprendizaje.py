@@ -20,21 +20,21 @@ def load_and_smooth(filename, window=5):
     return np.array(episodes), scores, ep_ma, rolling_mean, rolling_std
 
 # lista de ficheros y etiquetas
-files  = [  "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_decreciente_005/history.txt",
-            "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_final/history.txt",
-            "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_decreciente_02/history.txt",
-            "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_decreciente_03/history.txt",
-            "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_decreciente_05/history.txt",
-            "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_decreciente_07/history.txt"
+files  = [  "Modelos_Finales_Figuras/Modelo_con_entropia_decreciente_005/history.txt",
+            "Modelos_Finales_Figuras/Modelo_con_entropia_decreciente_01/history.txt",
+            "Modelos_Finales_Figuras/Modelo_con_entropia_decreciente_02/history.txt",
+            "Modelos_Finales_Figuras/Modelo_con_entropia_decreciente_03/history.txt",
+            "Modelos_Finales_Figuras/Modelo_con_entropia_decreciente_05/history.txt",
+            "Modelos_Finales_Figuras/Modelo_con_entropia_decreciente_07/history.txt"
         ]
-labels = [r"$\alpha_{k} = 0.05$", r"$\alpha_{k} = 0.1$", r"$\alpha_{k} = 0.2$", 
-          r"$\alpha_{k} = 0.3$", r"$\alpha_{k} = 0.5$", r"$\alpha_{k} = 0.7$"
+labels = [r"$\mu_{k} = 0.05$", r"$\mu_{k} = 0.1$", r"$\mu_{k} = 0.2$", 
+          r"$\mu_{k} = 0.3$", r"$\mu_{k} = 0.5$", r"$\mu_{k} = 0.7$"
           ]
 colors = ["tab:olive", "tab:pink", "tab:cyan", "tab:blue", "tab:orange", "tab:green"]
 
-# files  = [  "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_final/history.txt",
-#             "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_1200_step/history.txt",
-#             "Modelos_Finales_Figuras/Pendulo_1/Modelo_con_entropia_step_gradual/history.txt"
+# files  = [  "Modelos_Finales_FigurasModelo_con_entropia_final/history.txt",
+#             "Modelos_Finales_Figuras/Modelo_con_entropia_1200_step/history.txt",
+#             "Modelos_Finales_Figuras/Modelo_con_entropia_step_gradual/history.txt"
 #         ]
 # labels = ["Model 1: 400 obs", "Model 2: 1200 obs", "Model 3: gradual"]
 # colors = ["tab:pink", "tab:gray", "tab:red"]
@@ -60,13 +60,13 @@ for fname, label, c in zip(files, labels, colors):
                      alpha=0.2,
                      color=c)
 
-plt.xlabel("Episode")
-plt.ylabel("Score")
+plt.xlabel("Episode", fontsize=16, fontweight="bold")
+plt.ylabel("Score", fontsize=16, fontweight="bold")
 # plt.title("Reward Scale Comparison")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
-plt.xlim(4, 790)
+plt.xlim(4, 1490)
 plt.ylim(-800, 500)
-plt.savefig("Graficas/curvas_de_aprendizaje/Multiples_entropias_decrecientes_opcion_11.png")
+plt.savefig("Graphics/curvas_de_aprendizaje/Multiples_entropias_decrecientes_1500_epochs.png")
 plt.show()

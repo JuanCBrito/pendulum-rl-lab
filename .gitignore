@@ -4,3 +4,4 @@ __pycache__/
 inverted_pendulum_arduino.ino
 environment.py
 plotting.py
+Graphics/Error_cuadratico_entretiempos.py
